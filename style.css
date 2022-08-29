@@ -1,19 +1,83 @@
-.root{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    background-color: beige;
+    background-color: black;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 18px;
+    color: white;
 }
 
 .container {
+    height: 100vh; 
+    width: 100vw;
+    display: flex;
+}
+
+.sidebar {
+    flex: 0.6;
+    background-image: url("./img/6adb2dfb-8237-4b73-8610-dfecb92b5bbe.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+
+.sidebar > img {
+    width: 100%;
+    opacity: 0.6;
+    position: relative;
+    top: 40%;
+}
+
+.content {
     flex: 1;
-    justify-content: center;
+    background-color: rgb(15, 15, 15);
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
     gap: 10px;
+}
+
+.content > p {
+    flex: 0.15;
+}
+
+form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.input-form {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    column-gap: 80px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+input {
+    width: 250px;
+}
+
+button {
+    cursor: pointer;
+    padding: 16px;
+    background-color: red;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    font-family: Verdana;
+    font-size: 14px;
 }
