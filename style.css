@@ -11,7 +11,7 @@
 }
 
 body {
-    background-color: rgb(55, 81, 151);
+    background-color: rgb(206, 94, 42);
     font-family: "League";
     font-size: 15px;
     display: flex;
@@ -54,14 +54,16 @@ body {
     display: flex;
     flex-direction: column;
     padding: 30px;
-    gap: 10px;
 }
 
-.content > p {
-    flex: 0.25;
-    font-size: 20px;
+.text{
+    flex: 0.22;
+    font-size: 19px;
     font-family: "League";
     line-height: 1.2;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
 }
 
 
@@ -78,7 +80,6 @@ form {
     flex-wrap: wrap;
     row-gap: 20px;
     column-gap: 50px;
-    padding-top: 25px;
 }
 
 .input {
@@ -87,6 +88,8 @@ form {
     gap: 5px;
     background-color: white;
     border-radius: 5px;
+    max-height: 60px;
+    padding: 3px 5px 5px 5px;
 }
 
 .input > label {
@@ -103,7 +106,8 @@ input {
 }
 
 input:focus{
-    background-color: orange;
+    outline-style: none;
+    border-bottom: 2px solid orangered;
 }
 
 .submit {
@@ -111,7 +115,6 @@ input:focus{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding-top: 20px;
 }
 
 button {
@@ -142,7 +145,9 @@ button {
 }
 
 .create-btn{
-    text-shadow: 1.2px 1.2px black;
+    text-shadow: 1px 1px black;
+    border: 1px solid black;
+
     letter-spacing: 1px;
     transition: transform(0.2s);
 }
@@ -150,6 +155,7 @@ button {
 .create-btn:hover{
     background-color: white;
     color: orangered;
+    border: 1px solid black;
     text-shadow: none;
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
