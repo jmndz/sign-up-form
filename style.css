@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'League';
+    src: url('./font/League.otf');
+    font-weight: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,38 +11,46 @@
 }
 
 body {
-    background-color: black;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: white;
+    background-color: rgb(55, 81, 151);
+    font-family: "League";
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
 }
 
 .container {
-    height: 100vh; 
-    width: 100vw;
+    background-color: rgb(0, 0, 0, 0.8);
+    height: 550px; 
+    width: 800px;
     display: flex;
+    position: relative;
+    top: 40px;
+    padding: 6px;
+    border-radius: 1.5%;
 }
 
 .sidebar {
     flex: 0.6;
-    background-image: url("./img/6adb2dfb-8237-4b73-8610-dfecb92b5bbe.jpg");
+    background-image: url("./img/enhypen.gif");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
+    border: 1px solid aliceblue;
     position: relative;
 }
 
 .sidebar > img {
     width: 100%;
-    opacity: 0.6;
     position: relative;
-    top: 40%;
+    top: 85%;
 }
 
 .content {
+    height: 100%;
     flex: 1;
-    background-color: rgb(15, 15, 15);
+    background-color: rgb(221, 221, 221);
     display: flex;
     flex-direction: column;
     padding: 30px;
@@ -44,40 +58,98 @@ body {
 }
 
 .content > p {
-    flex: 0.15;
+    flex: 0.25;
+    font-size: 20px;
+    font-family: "League";
+    line-height: 1.2;
 }
+
 
 form {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 25px;
 }
 
 .input-form {
+    flex:1;
     display: flex;
     flex-wrap: wrap;
     row-gap: 20px;
-    column-gap: 80px;
+    column-gap: 50px;
+    padding-top: 25px;
 }
 
 .input {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.input > label {
+    padding: 5px;
+    text-decoration: underline;
 }
 
 input {
-    width: 250px;
+    width: 100%;
+    height: 25px;
+    border: none;
+    padding: 5px;
+    font-size: 14px;
+}
+
+input:focus{
+    background-color: orange;
+}
+
+.submit {
+    flex: 0.3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
 }
 
 button {
     cursor: pointer;
     padding: 16px;
-    background-color: red;
+    background-color: orangered;
     color: white;
     border-radius: 15px;
     border: none;
-    font-family: Verdana;
+    font-family: "League";
     font-size: 14px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.audio{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.music {
+    background-image: url("./img/icons8-musical-40.png");
+    background-position: center;
+}
+
+.create-btn{
+    text-shadow: 1.2px 1.2px black;
+    letter-spacing: 1px;
+    transition: transform(0.2s);
+}
+
+.create-btn:hover{
+    background-color: white;
+    color: orangered;
+    text-shadow: none;
+    transform: scale(1.05);
 }
