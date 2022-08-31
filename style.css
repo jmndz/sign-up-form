@@ -79,7 +79,7 @@ form {
     display: flex;
     flex-wrap: wrap;
     row-gap: 20px;
-    column-gap: 50px;
+    column-gap: 30px;
 }
 
 .input {
@@ -103,11 +103,28 @@ input {
     border: none;
     padding: 5px;
     font-size: 14px;
+    padding-left: 20px;
 }
 
-input:focus{
+input:focus {
     outline-style: none;
     border-bottom: 2px solid orangered;
+}
+
+input:invalid:focus {
+    background-image: url('./img/icons8-cancel-48.png');
+    background-size: 20px;
+    background-repeat: no-repeat;
+}
+
+input:invalid:not(:focus):not(:placeholder-shown){
+    background-color: rgb(255, 126, 126);
+}
+
+input:valid:focus {
+    background-image: url('./img/icons8-ok-48.png');
+    background-size: 20px;
+    background-repeat: no-repeat;
 }
 
 .submit {

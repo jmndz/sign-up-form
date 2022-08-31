@@ -23,27 +23,28 @@
                 <div class="input-form">
                     <div class="input">
                         <label for="first-name">First Name</label>
-                        <input type="text" name="first-name" id="first-name" >
+                        <input type="text" name="first-name" id="first-name" placeholder=" " required>
                     </div>
                     <div class="input">
                         <label for="last-name">Last Name</label>
-                        <input type="text" name="last-name" id="last-name">
+                        <input type="text" name="last-name" id="last-name" placeholder=" " required>
                     </div>
                     <div class="input">
                         <label for="email">Email</label>
-                        <input type="email" name="email" id="email">
+                        <input type="email" name="email" id="email" placeholder=" " required>
                     </div>
                     <div class="input">
                         <label for="phone-num">Phone Number</label>
-                        <input type="text" name="phone-num" id="phone-num" attribute="number" minlength="11" maxlength="11">
+                        <input type="tel" name="phone-num" id="phone-num" pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}" 
+                        placeholder=" " required>
                     </div>
                     <div class="input">
                         <label for="password">Password</label>
-                        <input type="password" name="password" id="password">
+                        <input type="password" name="password" id="password" placeholder=" " required>
                     </div>
                     <div class="input">
                         <label for="confirm-pass">Confirm Password</label>
-                        <input type="password" name="confirm-pass" id="confirm-pass">
+                        <input type="password" name="confirm-pass" id="confirm-pass" placeholder=" " required>
                     </div>
                 </div>
                 <div class="submit">
