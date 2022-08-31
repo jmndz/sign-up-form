@@ -200,3 +200,55 @@ button {
 .invalid {
     background-color: pink;
 }
+
+@media only screen and (max-width:800px){
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .container {
+        top: 0%;
+        min-height: 2000px;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .sidebar {
+        flex: 1;
+        top: 0%;
+        height: 1000px;
+        background-position: center;
+    }
+
+    .sidebar > img {
+        height: 120px;
+        top: 88%;
+    }
+
+    .content {
+        flex: 1;
+    }
+
+    .text {
+        flex: 0.2;
+        font-size: 28px;
+    }
+
+    .input-form {
+        flex: 1;
+        flex-direction: column;
+        gap: 45px;
+    }
+
+    .input > span {
+        line-height: 120%;
+    }
+
+    .submit {
+        flex: 0.2;
+        gap: 40px;
+    }
+
+}
