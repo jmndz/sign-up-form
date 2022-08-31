@@ -4,6 +4,12 @@
     font-weight: normal;
 }
 
+@font-face {
+    font-family: 'Brygada';
+    src: url('./font/Brygada1918-VariableFont_wght.ttf');
+    font-weight: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -103,12 +109,13 @@ input {
     border: none;
     padding: 5px;
     font-size: 14px;
-    padding-left: 20px;
+    padding-left: 22px;
 }
 
 input:focus {
     outline-style: none;
     border-bottom: 2px solid orangered;
+    background-color: white;
 }
 
 input:invalid:focus {
@@ -117,14 +124,27 @@ input:invalid:focus {
     background-repeat: no-repeat;
 }
 
-input:invalid:not(:focus):not(:placeholder-shown){
-    background-color: rgb(255, 126, 126);
+input:invalid:not(:focus):not(:placeholder-shown) {
+    background-color: pink;
+}
+
+input:valid:not(:focus):not(:placeholder-shown){
+    border-bottom: 2px solid orangered;
 }
 
 input:valid:focus {
     background-image: url('./img/icons8-ok-48.png');
     background-size: 20px;
     background-repeat: no-repeat;
+}
+
+.input > span {
+    width: 180px;
+    display: flex;
+    flex-wrap: wrap;
+    color: rgb(189, 35, 35);
+    font-size: 11px;
+    padding-top: 5px;
 }
 
 .submit {
@@ -161,7 +181,7 @@ button {
     background-position: center;
 }
 
-.create-btn{
+.submit-btn{
     text-shadow: 1px 1px black;
     border: 1px solid black;
 
@@ -169,10 +189,14 @@ button {
     transition: transform(0.2s);
 }
 
-.create-btn:hover{
+.submit-btn:hover{
     background-color: white;
     color: orangered;
     border: 1px solid black;
     text-shadow: none;
     transform: scale(1.02);
+}
+
+.invalid {
+    background-color: pink;
 }

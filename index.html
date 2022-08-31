@@ -19,37 +19,43 @@
                     Interested in becoming a part of the Engene fandom? Sign up now!
                 </p>
             </div>
-            <form action="" method="post">
+            <form novalidate>
                 <div class="input-form">
                     <div class="input">
                         <label for="first-name">First Name</label>
                         <input type="text" name="first-name" id="first-name" placeholder=" " required>
+                        <span class="validity"></span>
                     </div>
                     <div class="input">
                         <label for="last-name">Last Name</label>
                         <input type="text" name="last-name" id="last-name" placeholder=" " required>
+                        <span class="validity"></span>
                     </div>
                     <div class="input">
                         <label for="email">Email</label>
                         <input type="email" name="email" id="email" placeholder=" " required>
+                        <span class="validity"></span>
                     </div>
                     <div class="input">
                         <label for="phone-num">Phone Number</label>
-                        <input type="tel" name="phone-num" id="phone-num" pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}" 
-                        placeholder=" " required>
+                        <input type="tel" name="phone-num" id="phone-num" pattern="09?[0-9]{10}" maxlength="11"
+                            placeholder=" " required>
+                        <span class="validity"></span>
                     </div>
                     <div class="input">
                         <label for="password">Password</label>
-                        <input type="password" name="password" id="password" placeholder=" " required>
+                        <input type="password" name="password" id="password" minlength="6" placeholder=" " required>
+                        <span class="validity"></span>
                     </div>
                     <div class="input">
                         <label for="confirm-pass">Confirm Password</label>
-                        <input type="password" name="confirm-pass" id="confirm-pass" placeholder=" " required>
+                        <input type="password" name="confirm-pass" id="confirm-pass" minlength="6" placeholder=" " required>
+                        <span class="validity"></span>
                     </div>
                 </div>
                 <div class="submit">
                     <div>
-                        <button class="create-btn" type="submit">Create Account</button>
+                        <button class="submit-btn" type="submit">Create Account</button>
                     </div>
                     <div class="row">
                         <p>Already have an account? <a href="">Log in</a></p>
