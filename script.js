@@ -4,7 +4,6 @@ const email = document.querySelector('#email');
 const phoneNumber = document.querySelector('#phone-num');
 const password = document.querySelector('#password');
 const confirmPass = document.querySelector('#confirm-pass');
-confirmPass.addEventListener('focusout', confirmPassword);
 const submit = document.querySelector('.submit-btn').addEventListener('click', submitForm);
 
 const invalidFirstName = document.querySelector('#first-name + span');
@@ -13,6 +12,13 @@ const invalidEmail = document.querySelector('#email + span');
 const invalidPhoneNumber = document.querySelector('#phone-num + span');
 const invalidPassword = document.querySelector('#password + span');
 const invalidConfirmPass = document.querySelector('#confirm-pass + span');
+
+firstName.addEventListener('focusout',function(){checkForm(firstName,invalidFirstName, "Please enter your first name")});
+lastName.addEventListener('focusout',function(){checkForm(lastName,invalidLastName, "Please enter your last name")});
+email.addEventListener('focusout',function(){checkForm(email,invalidEmail, "Please enter a valid email \neg.kimsunoo@gmail.com")});
+phoneNumber.addEventListener('focusout',function(){checkForm(phoneNumber,invalidPhoneNumber, "eg. 09123456789")});
+password.addEventListener('focusout',function(){checkForm(password,invalidPassword, "Password is too short")});
+confirmPass.addEventListener('focusout', confirmPassword);
 
 const audio = document.querySelector('.music');
 const songList = ['./audio/ENHYPEN - Blessed Cursed.mp3',
@@ -37,56 +43,16 @@ function playAudio(){
     song.play();
 }
 
-firstName.addEventListener('focusout', () =>{
-    if(firstName.value == ""){
-        invalid(firstName);
-        invalidFirstName.textContent = "Please enter your first name";
+function checkForm(input, invalidInput, text){
+    if(input.value == "" || !input.checkValidity()){
+        invalid(input);
+        invalidInput.textContent = text;
     }else{
-        valid(firstName);
-        invalidFirstName.textContent = "";
+        valid(input);
+        invalidInput.textContent = "";
     }
-});
-
-lastName.addEventListener('focusout', () =>{
-    if(lastName.value == ""){
-        invalid(lastName);
-        invalidLastName.textContent = "Please enter your last name";
-    }else{
-        valid(lastName);
-        invalidLastName.textContent = "";
-    }
-});
-
-email.addEventListener('focusout', () =>{
-    if(email.value == ""){
-        invalid(email);
-        invalidEmail.textContent = "Please enter a valid email \neg.kimsunoo@gmail.com";
-    }else{
-        valid(email);
-        invalidEmail.textContent = "";
-    }
-});
-
-phoneNumber.addEventListener('focusout', () =>{
-    if(phoneNumber.value == ""){
-        invalid(phoneNumber);
-        invalidPhoneNumber.textContent = "eg. 09123456789";
-    }else{
-        valid(phoneNumber);
-        invalidPhoneNumber.textContent = "";
-    }
-});
-
-password.addEventListener('focusout', () =>{
-    if(password.value.length < 6){
-        invalid(password);
-        invalidPassword.textContent = "Password too short";
-    }else{
-        valid(password);
-        invalidPassword.textContent = "";
-    }
-    confirmPassword();
-});
+    if(input === password) confirmPassword();
+}
 
 function confirmPassword(){
     if(confirmPass.value !== password.value){
